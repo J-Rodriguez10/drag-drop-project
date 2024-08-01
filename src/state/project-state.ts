@@ -1,8 +1,13 @@
 import { Project, ProjectStatus } from '../models/project.js';
 
-// Project State Management
+// Type alias for listener functions that handle an array of items
 type Listener<T> = (items: T[]) => void;
 
+
+/**
+ * State Class
+ * Generic base class for managing state with listeners.
+ */
 class State<T> {
   protected listeners: Listener<T>[] = [];
 
@@ -11,6 +16,10 @@ class State<T> {
   }
 }
 
+/**
+ * ProjectState Class
+ * Singleton class for managing project state.
+ */
 export class ProjectState extends State<Project> {
   private projects: Project[] = [];
   private static instance: ProjectState;
@@ -54,4 +63,5 @@ export class ProjectState extends State<Project> {
   }
 }
 
+// Export the singleton instance of ProjectState for use in other modules
 export const projectState = ProjectState.getInstance();

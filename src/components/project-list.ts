@@ -6,6 +6,7 @@ import { projectState } from '../state/project-state.js';
 import { ProjectItem } from './project-item.js';
 
 // ProjectList Class
+// Represents a list of projects (active or finished) and handles rendering and drag-and-drop functionality.
 export class ProjectList extends Component<HTMLDivElement, HTMLElement>
   implements DragTarget {
   assignedProjects: Project[];

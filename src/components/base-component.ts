@@ -1,5 +1,5 @@
-// Component Base Class
-
+// Abstract base Component class for other UI components.
+// This base class handles template rendering and DOM insertion.
 export abstract class Component<T extends HTMLElement, U extends HTMLElement> {
   templateElement: HTMLTemplateElement;
   hostElement: T;
@@ -30,7 +30,7 @@ export abstract class Component<T extends HTMLElement, U extends HTMLElement> {
 
   private attach(insertAtBeginning: boolean) {
     this.hostElement.insertAdjacentElement(
-      insertAtBeginning ? 'afterbegin' : 'beforeend',
+      insertAtBeginning ? "afterbegin" : "beforeend",
       this.element
     );
   }

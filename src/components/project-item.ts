@@ -4,6 +4,7 @@ import { Component } from './base-component.js';
 import { autobind } from '../decorators/autobind.js';
 
 // ProjectItem Class
+// Represents a single project item and handles its rendering and drag-and-drop functionality.
 export class ProjectItem extends Component<HTMLUListElement, HTMLLIElement>
   implements Draggable {
   private project: Project;

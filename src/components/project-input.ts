@@ -3,7 +3,8 @@ import { Validatable, validate } from '../util/validation.js';
 import { autobind } from '../decorators/autobind.js';
 import { projectState } from '../state/project-state.js';
 
-// ProjectInput Class
+// ProjectInput Class handles the input form for adding new projects.
+// It extends the Component class and manages the form's validation and submission.
 export class ProjectInput extends Component<HTMLDivElement, HTMLFormElement> {
   titleInputElement: HTMLInputElement;
   descriptionInputElement: HTMLInputElement;
